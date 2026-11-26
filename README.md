@@ -1,79 +1,79 @@
-# Vitality
+# Token City
 
-Connected health and family wellbeing platform. A vision for healthier, happier lives.
+Blockchain-powered social platform. A vision for connected communities, creative ownership, and shared value.
 
-Vitality brings wearables, care services, family support, emergency assistance, and insurance-funded benefits into one health companion. Technology stays in the background. Users see clearer information, next steps, professional help when needed, and meaningful benefits.
+Token City brings social profiles, interest-based communities, creator content, messaging, events, and blockchain-backed contribution records into one platform. Members connect, create, build communities, and receive recognition or funded benefits for verified participation. Users control their identity, creations, and what they share.
 
-**Vitality Guard** is a wearable and location-enabled assistance network. It can connect a person in distress with nearby eligible helpers and approved healthcare or emergency partners.
+**Token City Connect** is an optional device and location-enabled community participation network. It can connect consenting members with nearby communities, shared activities, and approved event or creator partners.
 
 ## Outcomes
 
-- Clearer understanding of personal health
-- Healthier daily habits without unnecessary pressure
-- Care-team connection when professional support is needed
-- A trusted emergency path for danger or acute distress
-- Safe support from family, friends, and nearby eligible participants
-- Insurance-funded preventive care and verified assistance
+- Meaningful connections around shared interests
+- Active communities built through creativity and collaboration
+- Member-controlled identity, content sharing, and community participation
+- Clear membership benefits and recognition for verified contributions
+- Safe interaction with friends, creators, and nearby consenting participants
+- Community-funded activities, transparent contribution records, and verified benefits
 
 ## Who participates
 
-The patient stays at the center. Family and friends are an optional support layer and may share wellness goals only. Social sharing does not include diagnoses, clinician notes, raw measurements, or private medical conversations.
+The member stays at the center. Friends and communities are optional social layers. Members choose which interests, creations, achievements, and activities to share. Social sharing does not include private messages, precise location, identity documents, or restricted account information.
 
-Clinicians manage review, care plans, evidence, messaging, and escalation. Insurers fund programs and benefits without unrestricted clinical access. Healthcare organizations manage programs, staff, and clinical responsibility. Every participant sees and does only what they are authorized to do.
+Creators manage content, collaborations, and audience access. Community managers handle membership, programs, moderation, messaging, and disputes. Sponsors fund activities and benefits without unrestricted access to member data. Event and partner organizations manage programs, staff, and delivery responsibility. Every participant sees and does only what they are authorized to do.
 
 ## Connected devices
 
-Permitted observations can come from wearables, mobile health frameworks, home monitors, rehabilitation equipment, and dedicated IoT hardware. Device data is evidence, not a diagnosis. Missing, stale, or uncertain readings are data-quality conditions.
+Permitted participation signals can come from optional wearables, mobile device frameworks, event check-in equipment, and dedicated IoT hardware. Devices can support community events and shared activities; core social participation does not require hardware. Device data is supporting evidence, not automatic proof of contribution. Missing, stale, or uncertain readings are data-quality conditions.
 
-Early hardware can use the Nordic Semiconductor nRF5 Series (nRF52832, nRF52833, nRF52840), plus STM32 and Arduino BLE. Devices handle sensing, local buffering, Bluetooth Low Energy, identity, and secure sync. Approved edge gateways may extend coverage later and do not receive protected clinical data.
+Early hardware can use the Nordic Semiconductor nRF5 Series (nRF52832, nRF52833, nRF52840), plus STM32 and Arduino BLE. Devices handle sensing, local buffering, Bluetooth Low Energy, identity, and secure sync. Approved edge gateways may extend coverage later and do not receive restricted member data.
 
 ```text
 Device → BLE / gateway → authenticated ingestion → quality checks
-  → secure health store → care programs → user and care-team apps
+  → secure participation store → community programs → member and community apps
 ```
 
-## Vitality Guard
+## Token City Connect
 
-Approved wearables (watch, ring, pendant, safety band, or similar) support daily wellbeing and a deliberate SOS trigger. AI may raise an assistance event from permitted signals such as a hard fall or prolonged immobility. That event is an escalation request, not a diagnosis.
+Approved wearables (watch, ring, pendant, participation band, or similar) can support an explicit event check-in or activity request. AI may suggest relevant communities or flag unusual participation signals. A suggestion or device signal is a request for review, not confirmed participation or reward authorization.
 
-Location is event-scoped and minimum-necessary. Nearby helpers may be matched within about 100–500 meters where density, consent, safety rules, and local law allow it. They receive a short request, approximate location, and an accept or decline action. They are not asked to confront threats or give care beyond their training. Dangerous situations route to appropriate emergency, security, or law-enforcement partners where those integrations exist.
+Location is event-scoped and minimum-necessary. Nearby members or activities may be matched within about 100–500 meters where density, consent, safety rules, and local law allow it. Members receive a short invitation, approximate location, and an accept or decline action. Participation is voluntary. Reports, unsafe interactions, and suspicious invitations route to authorized moderation or event partners.
 
 ```text
-SOS or risk signal → authenticate → locate → orchestrate
-  → confirm when appropriate → nearby helpers and professional routing
-  → verify assistance → close → reward only after verification
+Activity request or check-in signal → authenticate → locate → orchestrate
+  → confirm when appropriate → nearby members and event routing
+  → verify participation → close → reward only after verification
 ```
 
-The patient app shows a simple path: Triggered, Locating, Routing, Responder Accepted, Help In Progress, Verification, Closed. Server-side event states include Detected, Triggered, Confirmation Pending, Active, Routing, Responder Accepted, Professional Response Requested, Help In Progress, Verification Pending, Resolved, Cancelled, and Closed. Clients cannot invent a completed rescue or create a reward.
+The member app shows a simple path: Requested, Discovering, Matching, Invitation Accepted, Activity In Progress, Verification, Closed. Server-side event states include Detected, Requested, Confirmation Pending, Active, Matching, Invitation Accepted, Partner Review Requested, Activity In Progress, Verification Pending, Resolved, Cancelled, and Closed. Clients cannot invent completed participation or create a reward.
 
 ## Experience and backend
 
-The web app can use SvelteKit and TypeScript. Native or mobile components handle Bluetooth, notifications, and device permissions. The interface separates device data, AI assistance, and clinician-approved information. Users control what is shared.
+The web app can use SvelteKit and TypeScript. Native or mobile components handle Bluetooth, notifications, and device permissions. The interface separates social content, participation evidence, AI suggestions, and verified community records. Users control what is shared.
 
-Go services enforce identity, consent, enrollment, care programs, device registration, observations, messaging, benefits, and partner integrations. PostgreSQL holds operational data. Controlled object storage holds restricted evidence. FHIR-compatible APIs connect healthcare systems where appropriate. A reward outage must not block care plans, clinical communication, or health data.
+Go services enforce identity, consent, enrollment, community programs, device registration, participation signals, messaging, benefits, and partner integrations. PostgreSQL holds operational data. Controlled object storage holds restricted evidence. Partner APIs connect community, creator, and event systems where appropriate. A reward outage must not block social feeds, community communication, or access to member content.
 
 ## AI
 
-AI organizes information, summarizes permitted records, explains approved instructions, and routes questions. It can return “insufficient information.” It does not diagnose, change care plans, override clinicians, release insurance funds, or authorize rewards. Emergency detection produces a risk signal and escalation level. False positives and false negatives are safety metrics. An AI event alone never authorizes payment.
+AI organizes information, summarizes permitted community content, explains approved program instructions, recommends relevant communities, and routes questions. It can return “insufficient information.” It does not change membership rights, override moderators, release community funds, or authorize rewards. Abuse and participation-anomaly detection produces a review signal and escalation level. False positives and false negatives are quality metrics. An AI event alone never authorizes payment.
 
 ## Benefits and rewards
 
-Insurers fund eligible programs. Patients do not buy, deposit, invest, or trade reward units. The app shows a benefit balance. Credits are closed-loop entitlements: not sold to users, not transferred between members, not cash by default, and not listed on an exchange. Legal treatment is reviewed per market and sponsor before launch.
+Communities, creators, and sponsors fund eligible programs, including from community revenue where agreed. Members do not buy, deposit, invest, or trade reward units. The app shows a benefit balance. Credits are closed-loop entitlements: not sold to users, not transferred between members, not cash by default, and not listed on an exchange. Legal treatment is reviewed per market and sponsor before launch.
 
-A credit is issued once, against a unique approved milestone or assistance event, and only while the funded allocation covers its maximum redemption liability. Value is fixed or bounded in advance. There is no bidding during an emergency.
+A credit is issued once, against a unique approved contribution, community milestone, or participation event, and only while the funded allocation covers its maximum redemption liability. Value is fixed or bounded in advance. Reward terms are defined before the activity begins.
 
 ```text
 Program budget → eligible activity → review → authorization
-  → benefit balance → approved provider → fulfillment → insurer settlement
+  → benefit balance → approved partner → fulfillment → sponsor settlement
 ```
 
-Emergency helper rewards require a full event timeline: signed timestamps, authenticated triggers, location consistency, acceptance and arrival, protected messages, and user, care-team, or partner confirmation when available. Decisions are Verified, Partially Verified, Rejected, or Manual Review Required. The ledger stores the accounting result and non-sensitive references only.
+Community contribution rewards require a full activity timeline: signed timestamps, authenticated submissions, location consistency only when relevant and consented, acceptance and completion, protected messages, and member, community-manager, or partner confirmation when available. Decisions are Verified, Partially Verified, Rejected, or Manual Review Required. The ledger stores the accounting result and non-sensitive references only.
 
 Reward states: Potential, Under Review, Approved, Processing, Available, Reserved, Redeemed.
 
 ## Permissioned ledger
 
-Hyperledger Fabric with Go chaincode is a proposed internal ledger for authorized reward movements: duplicate prevention, program limits, reservation, redemption, release, and correction. It does not diagnose, judge clinical evidence, or store health information.
+Hyperledger Fabric with Go chaincode is a proposed internal blockchain ledger for authorized community reward movements: duplicate prevention, program limits, reservation, redemption, release, and correction. It records approved accounting outcomes; it does not judge social content, grant content rights, or store private member information.
 
 Contract operations: `CreateProgram`, `AmendProgram`, `FundAllocation`, `IssueAward`, `ReserveAward`, `ConfirmRedemption`, `ReleaseReservation`, `RecordCorrection`. Writes are idempotent. Corrections are new linked entries. Issued redemption liability cannot exceed the funded allocation.
 
@@ -81,7 +81,7 @@ Use Fabric in production only if multiple organizations need a shared, independe
 
 ## Privacy and safety
 
-Encrypt data in transit and at rest. Use OIDC, server-side authorization, role-based access, staff MFA, key management, tenant isolation, audit, and retention controls. Precise location is purpose-limited and expires with the event. Controls cover false SOS events, spoofed location, replay, account takeover, stalking, and reward fraud. Users can manage community participation, emergency contacts, location permission, and automatic detection.
+Encrypt data in transit and at rest. Use OIDC, server-side authorization, role-based access, staff MFA, key management, tenant isolation, audit, and retention controls. Precise location is purpose-limited and expires with the event. Controls cover harassment, spam, impersonation, spoofed participation or location, replay, account takeover, stalking, and reward fraud. Users can manage community participation, content visibility, blocking, reporting, and location permission.
 
 ## Technology baseline
 
@@ -92,13 +92,13 @@ Encrypt data in transit and at rest. Use OIDC, server-side authorization, role-b
 | Operational data | PostgreSQL |
 | Evidence and attachments | Controlled object storage |
 | Identity | OIDC, RBAC, consent, staff MFA |
-| Interoperability | FHIR-compatible APIs |
+| Interoperability | Community, creator, and event partner APIs |
 | IoT | nRF5 Series, STM32, Arduino BLE; BLE and Wi-Fi |
 | AI | Backend-managed assistance |
 | Observability | OpenTelemetry |
 | Rewards | Go reward service; Hyperledger Fabric and Go chaincode as proposed |
 | Reward views | PostgreSQL projections of committed ledger events |
 
-Build in dependency order: identity and consent, devices and integrations, validation, care programs, AI assistance, clinical responsibility, insurer funding, then authorized reward accounting. Healthcare continues if the reward ledger is unavailable.
+Build in dependency order: identity and consent, social profiles and communities, devices and integrations, participation validation, community programs, AI assistance, moderation responsibility, sponsor funding, then authorized reward accounting. Social participation continues if the reward ledger is unavailable.
 
-Success is healthier routines, engagement, preventive care, reliable devices, family support, benefit use, and long-term wellbeing. Vitality is a health platform first.
+Success is meaningful connections, active communities, member retention, original creations, verified contributions, benefit use, and long-term community trust. Token City is a blockchain-powered social platform built around community participation and member-controlled identity.
